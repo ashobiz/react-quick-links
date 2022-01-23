@@ -6,7 +6,7 @@ function App() {
   // Download test test test download
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header one">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hello <code>src/App.tsx</code> and save to reload.

@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
-  // Download test test test download
+  const [displayLinks, setDisplayLinks] = useState<boolean>(false);
+
+  const handleButtonClick = (): void => {
+    setDisplayLinks(!displayLinks);
+  };
+
   return (
     <div className="App">
-      <header className="App-header one">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {displayLinks && (
+        <div className="links-child">
+          <ul>
+            <li>Link 1</li>
+            <li>Link 1</li>
+            <li>Link 1</li>
+            <li>Link 1</li>
+            <li>Link 1</li>
+            <li>Link 1</li>
+          </ul>
+        </div>
+      )}
+      <div className="button" onClick={handleButtonClick}>
+        LINKS
+      </div>
     </div>
   );
 }

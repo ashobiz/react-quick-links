@@ -1,0 +1,32 @@
+.app {
+  position: fixed;
+  background-color: #444;
+  right: 15px;
+  bottom: 15px;
+  .app_inner {
+    position: relative;
+    .links_child {
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      background-color: #999;
+      width: 100px;
+      text-align: center;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+    }
+    .menu {
+      position: absolute;
+      background-color: #888;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

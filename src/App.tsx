@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
+import styles from './app.module.scss';
 
 function App() {
   const [displayLinks, setDisplayLinks] = useState<boolean>(false);
 
-  const handleButtonClick = (): void => {
+  const handleMenuClick = (): void => {
     setDisplayLinks(!displayLinks);
   };
 
   return (
-    <div className="App">
-      {displayLinks && (
-        <div className="links-child">
-          <ul>
-            <li>Link 1</li>
-            <li>Link 1</li>
-            <li>Link 1</li>
-            <li>Link 1</li>
-            <li>Link 1</li>
-            <li>Link 1</li>
-          </ul>
+    <div className={styles.app}>
+      <div className={styles.app_inner}>
+        {displayLinks && (
+          <div className={styles.links_child}>
+            <ul>
+              <li>Link 1</li>
+              <li>Link 1</li>
+              <li>Link 1</li>
+              <li>Link 1</li>
+              <li>Link 1</li>
+              <li>Link 1</li>
+            </ul>
+          </div>
+        )}
+        <div className={styles.menu} onClick={handleMenuClick}>
+          MENU
         </div>
-      )}
-      <div className="button" onClick={handleButtonClick}>
-        LINKS
       </div>
     </div>
   );

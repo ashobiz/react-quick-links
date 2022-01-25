@@ -1,33 +1,32 @@
-import React, { useState } from 'react';
-import styles from './app.module.scss';
+import React from 'react';
+import Main from './Main';
+import { FaBars } from 'react-icons/fa';
 
 function App() {
-  const [displayLinks, setDisplayLinks] = useState<boolean>(false);
-
-  const handleMenuClick = (): void => {
-    setDisplayLinks(!displayLinks);
+  const options = {
+    button: {
+      buttonName: <FaBars />,
+      backgroundColor: '#ff0000',
+      textColor: 'white',
+      rounded: true,
+    },
   };
 
   return (
-    <div className={styles.app}>
-      <div className={styles.app_inner}>
-        {displayLinks && (
-          <div className={styles.links_child}>
-            <ul>
-              <li>Link 1</li>
-              <li>Link 1</li>
-              <li>Link 1</li>
-              <li>Link 1</li>
-              <li>Link 1</li>
-              <li>Link 1</li>
-            </ul>
-          </div>
-        )}
-        <div className={styles.menu} onClick={handleMenuClick}>
-          MENU
-        </div>
-      </div>
-    </div>
+    <>
+      {/* buttonName can be either String or React component (in case of icons) */}
+      <Main options={options}>
+        <ul>
+          <li>Test 1</li>
+          <li>Test 2</li>
+          <li>Test 3</li>
+          <li>Test 4</li>
+          <li>Test 5</li>
+          <li>Test 6</li>
+          <li>Test 7</li>
+        </ul>
+      </Main>
+    </>
   );
 }
 

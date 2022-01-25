@@ -24,7 +24,11 @@ const Main: React.FC<PROPS> = ({ options, children }) => {
   return (
     <div className={styles.app}>
       <div className={styles.app_inner}>
-        {displayLinks && <div className={styles.links_child}>{children}</div>}
+        {displayLinks && (
+          <div className={styles.links_child}>
+            <ul>{children}</ul>
+          </div>
+        )}
         <div
           className={styles.menu}
           style={{

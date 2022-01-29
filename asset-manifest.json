@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-quick-links/static/css/main.e01ffa25.css",
+    "main.js": "/react-quick-links/static/js/main.c4be391a.js",
+    "index.html": "/react-quick-links/index.html",
+    "main.e01ffa25.css.map": "/react-quick-links/static/css/main.e01ffa25.css.map",
+    "main.c4be391a.js.map": "/react-quick-links/static/js/main.c4be391a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e01ffa25.css",
+    "static/js/main.c4be391a.js"
+  ]
+}

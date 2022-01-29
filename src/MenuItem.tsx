@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 type PROPS = {
   linkText: string;
@@ -15,10 +16,10 @@ const MenuItem: React.FC<PROPS> = ({
 }) => {
   return (
     <li>
-      <a href={linkHref}>
+      <Link to={linkHref}>
         {linkIcon && <span style={{ color: linkIconColor }}>{linkIcon}</span>}
         <em>{linkText}</em>
-      </a>
+      </Link>
     </li>
   );
 };

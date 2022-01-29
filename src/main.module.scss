@@ -1,6 +1,5 @@
 .app {
   position: fixed;
-  background-color: #444;
   right: 15px;
   bottom: 15px;
   .app_inner {
@@ -9,13 +8,104 @@
       position: absolute;
       bottom: 70px;
       right: 0;
-      background-color: #999;
-      width: 100px;
-      text-align: center;
+      text-align: right;
+      width: 170px;
+      &.view_menu {
+        right: 0px;
+        transition: all 0.3s ease-in;
+      }
+      &.hide_menu {
+        right: -200px;
+        transition: all 0.3s ease-out;
+      }
       ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
+        li {
+          font-size: 16px;
+          a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #fff;
+            box-shadow: 0px 0px 15px #eee;
+            color: #444;
+            transition: all 0.5s ease;
+            &:hover,
+            &:focus,
+            &:active {
+              text-decoration: none;
+              background-color: #f7f7f7;
+            }
+            span {
+              margin-right: 5px;
+              position: relative;
+              top: 3px;
+            }
+            em {
+              font-style: normal;
+            }
+          }
+        }
+        &.pills {
+          li {
+            a {
+              margin: 5px 0;
+              border: 1px solid #ddd;
+              border-radius: 40px;
+            }
+          }
+        }
+        &.block {
+          border: 1px solid #e7e7e7;
+          box-shadow: 0px 0px 15px #eee;
+          border-radius: 10px;
+          li {
+            a {
+              margin: 0;
+              border-bottom: 1px solid #eee;
+            }
+            &:first-child {
+              a {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+              }
+            }
+            &:last-child {
+              a {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom: 0;
+              }
+            }
+          }
+        }
+        &.icon {
+          li {
+            height: 70px;
+            position: relative;
+            a {
+              position: absolute;
+              right: 0;
+              width: 60px;
+              height: 60px;
+              border-radius: 100%;
+              font-size: 20px;
+              margin-bottom: 10px;
+              border: 1px solid #eee;
+              padding: 0;
+              line-height: 60px;
+              text-align: center;
+              span {
+                margin: 0;
+              }
+              em {
+                display: none;
+              }
+            }
+          }
+        }
       }
     }
     .menu {
@@ -29,6 +119,7 @@
       right: 0;
       box-shadow: 0px 0px 15px #aaa;
       cursor: pointer;
+      font-size: 17px;
     }
   }
 }

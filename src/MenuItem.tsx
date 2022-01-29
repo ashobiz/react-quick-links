@@ -2,16 +2,22 @@ import React from 'react';
 
 type PROPS = {
   linkText: string;
-  linkIcon: React.ReactNode;
+  linkIcon?: React.ReactNode;
+  linkIconColor?: string;
   linkHref: string;
 };
 
-const MenuItem: React.FC<PROPS> = ({ linkText, linkIcon, linkHref }) => {
+const MenuItem: React.FC<PROPS> = ({
+  linkText,
+  linkIcon,
+  linkIconColor,
+  linkHref,
+}) => {
   return (
     <li>
       <a href={linkHref}>
-        <span>{linkIcon}</span>
-        {linkText}
+        {linkIcon && <span style={{ color: linkIconColor }}>{linkIcon}</span>}
+        <em>{linkText}</em>
       </a>
     </li>
   );

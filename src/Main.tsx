@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
+import { CLOSE, HUNDRED_PERCENT, MENU, ZERO_PERCENT } from './constants';
 import styles from './main.module.scss';
 
 type PROPS = {
   options: {
     button: {
-      buttonName: string | React.ReactNode;
+      buttonName?: string | React.ReactNode;
+      buttonClose?: string | React.ReactNode;
       backgroundColor?: string;
       textColor?: string;
       rounded?: boolean;
+    };
+    menuItems: {
+      style: string;
     };
   };
   children?: React.ReactNode;
 };
 
 const Main: React.FC<PROPS> = ({ options, children }) => {
-  const { button } = options;
+  const { button, menuItems } = options;
 
   const [displayLinks, setDisplayLinks] = useState<boolean>(false);
 
@@ -24,21 +29,29 @@ const Main: React.FC<PROPS> = ({ options, children }) => {
   return (
     <div className={styles.app}>
       <div className={styles.app_inner}>
-        {displayLinks && (
-          <div className={styles.links_child}>
-            <ul>{children}</ul>
-          </div>
-        )}
+        <div
+          className={`${styles.links_child} ${
+            displayLinks ? styles.view_menu : styles.hide_menu
+          }`}
+        >
+          <ul className={styles[menuItems.style]}>{children}</ul>
+        </div>
         <div
           className={styles.menu}
           style={{
             background: button.backgroundColor,
             color: button.textColor,
-            borderRadius: button.rounded ? '100%' : '0%',
+            borderRadius: button.rounded ? HUNDRED_PERCENT : ZERO_PERCENT,
           }}
           onClick={handleMenuClick}
         >
-          {button.buttonName}
+          {!displayLinks
+            ? button.buttonName
+              ? button.buttonName
+              : MENU
+            : button.buttonClose
+            ? button.buttonClose
+            : CLOSE}
         </div>
       </div>
     </div>
